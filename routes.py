@@ -3,6 +3,7 @@ from models import db, Produto
 
 main = Blueprint("main", __name__)
 
+
 def validar_produto(data, parcial=False):
     if not data:
         return "Envie dados em JSON."
@@ -23,14 +24,17 @@ def validar_produto(data, parcial=False):
 
     return None
 
+
 @main.route("/")
 def home():
     return render_template("index.html")
+
 
 @main.route("/produtos", methods=["GET"])
 def listar_produtos():
     produtos = Produto.query.all()
     return jsonify([p.to_dict() for p in produtos])
+
 
 @main.route("/produtos", methods=["POST"])
 def criar_produto():
@@ -43,6 +47,7 @@ def criar_produto():
     db.session.add(produto)
     db.session.commit()
     return jsonify(produto.to_dict()), 201
+
 
 @main.route("/produtos/<int:id>", methods=["PUT"])
 def atualizar_produto(id):
@@ -62,6 +67,7 @@ def atualizar_produto(id):
 
     db.session.commit()
     return jsonify(produto.to_dict())
+
 
 @main.route("/produtos/<int:id>", methods=["DELETE"])
 def deletar_produto(id):
