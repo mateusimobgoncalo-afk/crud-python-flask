@@ -1,12 +1,11 @@
 # CRUD de Produtos com Flask
 
-Projeto simples de CRUD (Criar, Ler, Atualizar e Deletar) usando:
+Aplicação web completa de CRUD (Criar, Ler, Atualizar e Excluir) feita com Python e Flask.
 
-- Python
-- Flask
-- Flask-SQLAlchemy
-- SQLite
-- HTML, CSS e JavaScript
+## Link online
+
+Acesse o projeto em produção:  
+https://crud-python-flask-1.onrender.com/
 
 ## Funcionalidades
 
@@ -14,23 +13,34 @@ Projeto simples de CRUD (Criar, Ler, Atualizar e Deletar) usando:
 - Listar produtos
 - Editar produto
 - Excluir produto
-- Validação de dados (nome e preço)
+- Validação de dados (nome obrigatório e preço maior que zero)
+- Mensagens de sucesso e erro na tela
+
+## Tecnologias usadas
+
+- Python
+- Flask
+- Flask-SQLAlchemy
+- SQLite (desenvolvimento local)
+- PostgreSQL (produção no Render)
+- HTML
+- CSS
+- JavaScript
+- Git e GitHub
 
 ## Estrutura do projeto
 
-- `app.py` -> arquivo principal
-- `models.py` -> modelo do banco
-- `routes.py` -> rotas da aplicação
-- `templates/index.html` -> tela principal
-- `static/app.js` -> lógica da tela
-- `static/style.css` -> estilo visual
+- `app.py` -> arquivo principal da aplicação
+- `models.py` -> modelo do banco de dados
+- `routes.py` -> rotas da aplicação (CRUD)
+- `templates/index.html` -> interface da aplicação
+- `static/app.js` -> lógica do frontend
+- `static/style.css` -> estilos visuais
+- `requirements.txt` -> dependências do projeto
 
-## Como rodar o projeto
+## Como rodar localmente
 
-1. Instalar dependências:
-
+1. Clone o repositório:
 ```bash
-pip install -r requirements.txt
-## Autor
-
-Mateus
+git clone https://github.com/mateusimobgoncalo-afk/crud-python-flask.git
+cd crud-python-flask
